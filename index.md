@@ -4,7 +4,7 @@ layout: default
 
 > You have probably been sent to this page because you asked me a personal question regarding my identification and self-identification. This is my polite way of saying I will generously call you whatever you want; but I refuse to tell you what to call me. I owe you nothing.
 
-There is worryingly increasing tendency for people to self-proclaim themselves as being "aware." This is misguided and arrogant, since a far more accurate statement would be "interested in increasing one's own inadequate awareness." Equally concerning is the tendency of introducing oneself as "Aard V. Ark (he/him)," or "Zee B. Ra (she/her)."
+There is a worryingly increasing tendency for people to self-proclaim themselves as being "aware." This is misguided and arrogant, since a far more accurate statement would be "interested in increasing one's own inadequate awareness." Equally concerning is the tendency of introducing oneself as "Aard V. Ark (he/him)," or "Zee B. Ra (she/her)."
 
 > Introduce yourself however you want, but you can't force me to introduce myself the same way.
 
