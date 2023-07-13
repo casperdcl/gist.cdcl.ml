@@ -4,5 +4,8 @@ description: Quick notes (too short to call a blog)
 layout: default
 ---
 
-- [pr-review](/pr-review)
-- [sa-pien](/sa-pien)
+{%- for item in site.html_pages -%}
+{%- if item.title != page.title -%}
+- [{{ item.title }}]({{ item.url }})
+{% endif %}
+{%- endfor -%}
