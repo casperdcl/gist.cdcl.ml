@@ -1,5 +1,5 @@
 ---
-title: Notes | Casper da Costa-Luis
+title: 'Notes &#124; Casper da Costa-Luis'
 description: Quick notes (too short to call a blog)
 layout: default
 ---
