@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Pull Requests & Reviews
 description: Principles for developers (maintainers and contributors)
+layout: default
 ---
 
 > disclaimer: If I've asked you to read this, I'm trying to say SORRY. I am not defending myself. I am simply explaining how I made a mistake.
