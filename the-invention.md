@@ -23,6 +23,6 @@ The internet, meanwhile, makes communication simultaneously realtime, asynchrono
 
 The brain cloud "singularity" is already here -- and you're part of it -- merely speed optimisations separating us from the most outlandish sci-fi. You may think a *real* singularity would be immortal, and thus a bigger invention. I counter that whether you are "a sum of communicable knowledge" or "a soul", you're already immortal. A "real singularity" is just a lossy encoding optimisation of the former.
 
-Here, have a node:
+Here, have [a node](https://github.com/casperdcl/gist.cdcl.ml/issues/1):
 
 <script src="https://utteranc.es/client.js" repo="casperdcl/gist.cdcl.ml" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
