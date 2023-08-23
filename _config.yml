@@ -3,3 +3,11 @@ lang: en-GB
 google_analytics: G-MERR30FCLL
 permalink: pretty
 image_host: https://cdcl.tk
+comments: >
+  <script src="https://utteranc.es/client.js"
+   repo="casperdcl/gist.cdcl.ml"
+   issue-term="pathname"
+   theme="preferred-color-scheme"
+   crossorigin="anonymous"
+   async>
+  </script>

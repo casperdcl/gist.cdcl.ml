@@ -6,6 +6,7 @@ layout: default
 
 {%- for item in site.html_pages -%}
 {%- if item.title != page.title -%}
+
 - [{{ item.title }}]({{ item.url }})
 {% endif %}
 {%- endfor -%}

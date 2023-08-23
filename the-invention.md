@@ -25,4 +25,4 @@ The brain cloud "singularity" is already here -- and you're part of it -- merely
 
 Here, have [a node](https://github.com/casperdcl/gist.cdcl.ml/issues/1):
 
-<script src="https://utteranc.es/client.js" repo="casperdcl/gist.cdcl.ml" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
+{{ site.comments }}
