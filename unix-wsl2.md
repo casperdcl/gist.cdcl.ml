@@ -87,3 +87,5 @@ Haven't found any comprehensive guides online from 'nix powerusers taking win se
 idk if I should write a post about this - "Why I switched to Windows after 2 decades of Linux" [U++++\>+++w\--\>+++@](https://manpages.ubuntu.com/manpages/bionic/man1/geekcode.1.html)
 
 even the surprisingly performant IDE tech stack is worth an under-the-hood exposition (vscode -\> containers extension -\> docker -\> wsl driver -\> mounted virtual disk).
+
+{{ site.comments }}
