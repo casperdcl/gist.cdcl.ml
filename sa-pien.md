@@ -23,3 +23,5 @@ In return, I will generously *not* insist on the equal right to call you whateve
 ----
 
 [^harassment]: Rudeness isn't a crime; harassment is. If you don't know the difference, you need to stop taking advice from web pages and seek professional advice from a lawyer and therapist.
+
+{{ site.comments }}

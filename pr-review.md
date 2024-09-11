@@ -44,3 +44,5 @@ However, I have -- on occasion -- failed to communicate appropriately.
 That's because I was being a lazy human. I was not being a bad programmer.
 
 If you have to choose between accidentally causing occasional offence versus accidentally causing occasional build up of technical debt; it's better to risk accidental offence. It takes less time to rectify. Saying "sorry" is much quicker and safer to do than refactoring. The wider user base will appreciate the resultant clean, consistent code. The contributor (who by definition has already demonstrated a high level of intelligence and enthusiasm) is far more likely to accept your apologies instead of morphing into a troll.
+
+{{ site.comments }}
