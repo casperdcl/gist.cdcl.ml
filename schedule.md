@@ -18,6 +18,8 @@ Average number of timeslot conflicts (rejections) per required attendee: <span i
 
 **Probability of finding a suitable time: <span id="probability"></span>%**
 
+<a id="link" href=".">Permalink to result</a>.
+
 {{ site.comments }}
 
 > Based on *Brown, Mathur, Narayan "Scheduling meetings: are the odds in your favo[u]r?"* [*Eur. Phys. J. B 97 (120) 2024*](https://doi.org/10.1140/epjb/s10051-024-00742-z)
@@ -45,7 +47,16 @@ function update() {
     );
   }
   p.innerHTML = Math.round(100 * (1 - fail));
+  document.getElementById("link").href = "./?l=" + l.value + "&m=" + m.value + "&r=" + r.value;
 }
+
+var matches = /l=([0-9]+)/.exec(window.location.search);
+l.value = matches ? parseInt(matches[1]) : 10;
+matches = /m=([0-9]+)/.exec(window.location.search);
+m.value = matches ? parseInt(matches[1]) : 5;
+matches = /r=([0-9]+)/.exec(window.location.search);
+r.value = matches ? parseInt(matches[1]) : 3;
+
 update();
 l.oninput = m.oninput = r.oninput = update;
 </script>
