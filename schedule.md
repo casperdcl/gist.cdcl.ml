@@ -4,6 +4,8 @@ description: Probability of finding a suitable time for a meeting
 layout: default
 ---
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
 Number of options (potential timeslots): <span id="l">10</span>
 
 <input type="range" min="1" max="100" value="10" class="slider" id="slots">
@@ -18,38 +20,20 @@ Average number of timeslot conflicts (rejections) per required attendee: <span i
 
 **Probability of finding a suitable time: <span id="probability"></span>%**
 
+<div><canvas id="barChart"></canvas></div>
+
 <a id="link" href=".">Permalink to result</a>.
 
 {{ site.comments }}
 
 > Based on *Brown, Mathur, Narayan "Scheduling meetings: are the odds in your favo[u]r?"* [*Eur. Phys. J. B 97 (120) 2024*](https://doi.org/10.1140/epjb/s10051-024-00742-z)
 
-<script type="text/javascript">
-function factorial(n) {
-  return n > 1 ? n * factorial(n - 1) : 1;
-}
+<script>
 var l = document.getElementById("slots");
 var m = document.getElementById("respondents");
 var r = document.getElementById("conflicts");
 var p = document.getElementById("probability");
-function update() {
-  document.getElementById("l").innerHTML = l.value;
-  document.getElementById("m").innerHTML = m.value;
-  document.getElementById("r").innerHTML = r.value;
-  r.max = l.value;
-
-  var J = l.value - r.value;
-  var fail = 0;
-  for (var j = 0; j <= J; j++) {
-    fail += Math.pow(-1, j) * factorial(l.value) / factorial(j) / factorial(l.value - j) * Math.pow(
-      factorial(J) * factorial(l.value - j) / factorial(l.value) / factorial(J - j),
-      m.value
-    );
-  }
-  p.innerHTML = Math.round(100 * (1 - fail));
-  document.getElementById("link").href = "./?l=" + l.value + "&m=" + m.value + "&r=" + r.value;
-}
-
+// Set default values from URL parameters
 var matches = /l=([0-9]+)/.exec(window.location.search);
 l.value = matches ? parseInt(matches[1]) : 10;
 matches = /m=([0-9]+)/.exec(window.location.search);
@@ -57,6 +41,46 @@ m.value = matches ? parseInt(matches[1]) : 5;
 matches = /r=([0-9]+)/.exec(window.location.search);
 r.value = matches ? parseInt(matches[1]) : 3;
 
-update();
-l.oninput = m.oninput = r.oninput = update;
+function factorial(n) {
+  return n > 1 ? n * factorial(n - 1) : 1;
+}
+function getProb(l, m, r, g) {
+  // g: number of conflicts
+  var prob = 0;
+  for (var j = 0; j <= l - r - g; j++) {
+    prob += Math.pow(-1, j) * factorial(l) / factorial(j) / factorial(g) / factorial(l - g - j) * Math.pow(
+      factorial(l - r) * factorial(l - g - j) / factorial(l) / factorial(l - r - g - j),
+      m
+    );
+  }
+  return prob;
+}
+// wait for chart.js
+document.addEventListener("DOMContentLoaded", () => {
+  var chart = new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: {
+      labels: Array.from({length: l.value}, (_, g) => g),
+      datasets: [{
+        label: "Probability (y-axis) of number of conflicts (x-axis)",
+        data: Array.from({length: l.value}, (_, g) => 0)}]},
+    options: {
+      scales: {y: {beginAtZero: true, min: 0, max: 100}}}});
+  function update() {
+    document.getElementById("l").innerHTML = l.value;
+    document.getElementById("m").innerHTML = m.value;
+    document.getElementById("r").innerHTML = r.value;
+    r.max = l.value;
+    chart.data.labels = Array.from({length: l.value}, (_, g) => g);
+    chart.data.datasets[0].data = Array.from({length: l.value}, (_, g) => {
+      return getProb(l.value, m.value, r.value, g) * 100;
+    });
+    chart.update();
+    p.innerHTML = Math.round(100 * (1 - getProb(l.value, m.value, r.value, 0)));
+    document.getElementById("link").href = "./?l=" + l.value + "&m=" + m.value + "&r=" + r.value;
+  }
+
+  update();
+  l.oninput = m.oninput = r.oninput = update;
+});
 </script>
