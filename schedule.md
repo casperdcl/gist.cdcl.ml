@@ -41,15 +41,25 @@ m.value = matches ? parseInt(matches[1]) : 5;
 matches = /r=([0-9]+)/.exec(window.location.search);
 r.value = matches ? parseInt(matches[1]) : 3;
 
-function factorial(n) {
-  return n > 1 ? n * factorial(n - 1) : 1;
+function fact(n, base=0) {
+  return n > base ? BigInt(n) * fact(n - 1, base) : 1n;
+}
+function gcd(a, b) {
+  if (!b) return a;
+  return gcd(b, a % b);
+}
+function bigDiv(a, b) {
+  divisor = gcd(a, b);
+  a /= divisor;
+  b /= divisor;
+  return Number(a / b) + Number(a % b) / Number(b);
 }
 function getProb(l, m, r, g) {
   // g: number of conflicts
   var prob = 0;
   for (var j = 0; j <= l - r - g; j++) {
-    prob += Math.pow(-1, j) * factorial(l) / factorial(j) / factorial(g) / factorial(l - g - j) * Math.pow(
-      factorial(l - r) * factorial(l - g - j) / factorial(l) / factorial(l - r - g - j),
+    prob += Math.pow(-1, j) * bigDiv(fact(l, l - g - j), fact(j) * fact(g)) * Math.pow(
+      bigDiv(fact(l - g - j, l - r - g - j), fact(l, l - r)),
       m
     );
   }
