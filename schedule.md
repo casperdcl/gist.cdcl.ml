@@ -5,28 +5,34 @@ layout: default
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-Number of options (potential timeslots): <span id="l">10</span>
+Number of options (potential timeslots), *l*=<span id="l">10</span>
 
 <input type="range" min="1" max="100" value="10" class="slider" id="slots">
 
-Number of required attendees: <span id="m">5</span>
+Number of required attendees, *m*=<span id="m">5</span>
 
 <input type="range" min="1" max="20" value="5" class="slider" id="respondents">
 
-Average number of timeslot conflicts (rejections) per required attendee: <span id="r">3</span>
+Average number of timeslot conflicts (rejections) per required attendee, *r*=<span id="r">3</span>
 
 <input type="range" min="0" max="100" value="3" class="slider" id="conflicts">
 
-**Probability of finding a suitable time: <span id="probability"></span>%**
+**Probability of finding a suitable time, 1-*π*<sub>0</sub>=<span id="probability"></span>%**\
+<a id="link" href=".">Permalink to result</a>
 
 <div><canvas id="barChart"></canvas></div>
-
-<a id="link" href=".">Permalink to result</a>.
 
 {{ site.comments }}
 
 > Based on *Brown, Mathur, Narayan "Scheduling meetings: are the odds in your favo[u]r?"* [*Eur. Phys. J. B 97 (120) 2024*](https://doi.org/10.1140/epjb/s10051-024-00742-z)
+
+$$
+\pi_\gamma = \sum_{j=0}^{l-r-\gamma}\frac{(-1)^j l!}{j!\gamma!(l-\gamma-j)!}
+\left[\frac{(l-r)!(l-\gamma-j)!}{l!(l-r-\gamma-j)!}\right]^m
+\qquad \mathrm{(A13)}
+$$
 
 <script>
 var l = document.getElementById("slots");
@@ -72,10 +78,21 @@ document.addEventListener("DOMContentLoaded", () => {
     data: {
       labels: Array.from({length: l.value - r.value + 1}, (_, g) => g),
       datasets: [{
-        label: "Probability (y-axis) of number of conflicts (x-axis)",
-        data: Array.from({length: l.value}, (_, g) => 0)}]},
+        label: "Probability",
+        data: Array.from({length: l.value - r.value + 1}, (_, g) => 0)}]},
     options: {
-      scales: {y: {beginAtZero: true, min: 0, max: 100}}}});
+      scales: {
+        y: {beginAtZero: true, min: 0, max: 100, title: {display: true, text: "Probability, π/[%]"}},
+        x: {title: {display: true, text: "Number of acceptable timeslots, γ"}}},
+      plugins: {legend: {display: false},
+        tooltip: {
+          callbacks: {
+            title: function(context) {
+              return "Number of acceptable timeslots, γ=" + context[0].label;
+            },
+            label: function(context) {
+              return 'Probability, π=' + Math.round(context.parsed.y) + '%';
+            }}}}}});
   function update() {
     document.getElementById("l").innerHTML = l.value;
     document.getElementById("m").innerHTML = m.value;
