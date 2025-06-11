@@ -1,5 +1,7 @@
-theme: jekyll-theme-hacker
+remote_theme: pages-themes/hacker
+plugins: [jekyll-remote-theme]
 lang: en-GB
+favicon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>𝅘𝅥𝅯</text></svg>'
 permalink: pretty
 image_host: https://img.cdcl.ml
 comments: >
