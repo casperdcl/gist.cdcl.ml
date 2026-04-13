@@ -1,5 +1,5 @@
 ---
-title: Humanity's Biggest Problem
+title: Humanity's Biggest Invention's Problem
 description: Verbosity
 layout: default
 ---
