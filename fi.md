@@ -4,11 +4,11 @@ description: And none are Real
 layout: default
 ---
 
-Some definitions:
-
-- **Fake** (AI): simplified model(s) good enough for specific purpose(s)
-- **Imaginary** (AGI & ASI): something we can never create[^babel]
-- **Real** (Human minds): exists
+Category | Definition | Example(s)
+--|--|--
+Fake | Simplified models good enough for specific purposes | AI
+Imaginary | Something we can never create[^babel] | AGI, ASI
+Real | Exists | Human minds
 
 ---
 
