@@ -10,6 +10,9 @@ Fake | Simplified models good enough for specific purposes | AI
 Imaginary | Something we can never create[^babel] | AGI, ASI
 Real | Exists | Human minds
 
+*Training* a model is not *teaching* a model. The "alignment" problem is not fixable. As a computational physicist with a PhD in ML, I know every technical "AI breakthrough" has been about improved *feigning* of intelligence, not actually *being* intelligent. One tiny subcomponent of the problem is *jaggedness*, which is [hilariously catastrophic](https://arxiv.org/html/2605.13829v1), while *hallucination* is [mathematically unfixable](https://arxiv.org/pdf/2401.11817).
+ML is founded on [compressed sensing](https://en.wikipedia.org/wiki/Compressed_sensing), which we often [joke](https://xkcd.com/1838/) is "glorified statistics". I think misplaced glorification is no joke.
+
 ---
 
 [^babel]: In the story of the [*Tower of Babel*](https://en.wikipedia.org/wiki/Tower_of_Babel), though humans might have the raw power and technical ability to build anything, their endeavours fail regardless -- because the flavour of ambition required ironically causes people to stop building and start fighting.
