@@ -2,6 +2,7 @@
 title: Scheduling Success Probability
 description: Probability of finding a suitable time for a meeting
 layout: default
+disable_comments: true
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>

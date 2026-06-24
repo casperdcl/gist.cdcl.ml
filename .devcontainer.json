@@ -1,0 +1,26 @@
+// format details: https://aka.ms/devcontainer.json
+// config options: https://github.com/devcontainers/templates/tree/main/src/ruby
+{
+"name": "Ruby",
+// alternatively, use Dockerfile/docker-compose.yml: https://containers.dev/guide/dockerfile
+"image": "mcr.microsoft.com/devcontainers/ruby:3-trixie",
+"customizations": {"vscode": {
+	"extensions": [
+		"DavidAnson.vscode-markdownlint",
+		"streetsidesoftware.code-spell-checker"],
+	"settings": {
+		"editor.tabCompletion": "on",
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true,
+		"files.trimTrailingWhitespace": true,
+		"cSpell.language": "en-GB",
+		"markdownlint.config": {
+			"ul-style": false,
+			"blanks-around-lists": false,
+			"no-inline-html": false}}}},
+"portsAttributes": {"4000": {"label": "Webserver", "onAutoForward": "notify"}},
+"postCreateCommand": "bundle install",
+"postStartCommand": "jekyll serve",
+"containerEnv": {"BUNDLE_USER_HOME": "/.bundle"},
+"mounts": ["source=${localEnv:HOME}/.bundle,target=/.bundle,type=bind,consistency=cached"]
+}

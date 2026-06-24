@@ -13,5 +13,3 @@ The sole solution is *morality* (not merely *legality*) -- i.e. adherence to the
 ----
 
 [^faith]: Religion terms this [*fear of the Lord*](https://www.biblegateway.com/passage/?search=Proverbs%2015&version=RSVCE). The nearest secular approximate equivalent is [*enlightened self-interest*](https://en.wikipedia.org/wiki/Enlightened_self-interest).
-
-{{ site.comments }}

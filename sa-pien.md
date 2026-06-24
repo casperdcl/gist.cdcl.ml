@@ -2,6 +2,8 @@
 title: Per S. On (sa/pien)
 description: Call me what you want
 layout: default
+disable_comments: true
+disable_webmentions: true
 ---
 
 You are reading this because you asked me a personal question regarding my identification and self-identification under <u>one of the categories below</u>. This is my polite way of saying I will generously call you whatever you want; but I refuse to tell you what to call me.
@@ -15,5 +17,3 @@ I owe you nothing. However, I will generously *not* insist on the equal right to
 ----
 
 [^harassment]: Rudeness isn't a crime; harassment is. If you don't know the difference, you need to stop taking advice from web pages and seek professional advice from a lawyer and therapist.
-
-{{ site.comments }}

@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="icon" href="{{ site.favicon }}">
     {% include head-custom.html %}
-
-{% seo %}
+    {% webmentions_head %}
+    {% seo %}
   </head>
 
   <body>
@@ -36,10 +36,17 @@
       <section id="main_content">
         {{ content }}
       </section>
+      {% if page.disable_comments != true %}
+      {{ site.comments }}
+      {% endif %}
+      {% if page.disable_webmentions != true %}
+      {% webmentions page.url %}
+      {% endif %}
     </div>
 
     {%- if jekyll.environment == "production" -%}
     <script defer data-domain="cdcl.ml" src="https://plausible.cdcl.ml/js/script.js"></script>
     {%- endif -%}
+    {% webmentions_js %}
   </body>
 </html>

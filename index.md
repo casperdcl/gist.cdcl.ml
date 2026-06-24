@@ -2,6 +2,8 @@
 title: 'Notes &#124; Casper da Costa-Luis'
 description: Quick notes (too short to call a blog)
 layout: default
+disable_comments: true
+disable_webmentions: true
 ---
 
 {%- for item in site.html_pages -%}

@@ -26,5 +26,3 @@ Below **30** points, you should fork the package (possibly with a different name
 In any case, leave unresolved issue(s)/PR(s) open on the original package (don't close them in frustration) as they may inspire others to take more responsibility!
 
 Collectives (charitable public groups) looking to take over packages should also have published mitigation/remedial policies for dealing with the bad actors who will inevitably infiltrate their ranks.
-
-{{ site.comments }}

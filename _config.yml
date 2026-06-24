@@ -1,5 +1,16 @@
 remote_theme: pages-themes/hacker
-plugins: [jekyll-remote-theme]
+plugins:
+- jekyll-feed
+- jekyll-remote-theme
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-target-blank
+- jekyll-webmention_io
+sitemap: true
+target-blank: {noreferrer: false}
+url: https://gist.cdcl.ml
+webmentions: {username: cdcl.ml, pages: true}
+
 lang: en-GB
 favicon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>𝅘𝅥𝅯</text></svg>'
 permalink: pretty
