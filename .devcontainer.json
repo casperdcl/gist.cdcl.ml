@@ -3,7 +3,7 @@
 {
 "name": "Ruby",
 // alternatively, use Dockerfile/docker-compose.yml: https://containers.dev/guide/dockerfile
-"image": "mcr.microsoft.com/devcontainers/ruby:3-trixie",
+"image": "mcr.microsoft.com/devcontainers/ruby:3.4-trixie",
 "customizations": {"vscode": {
 	"extensions": [
 		"DavidAnson.vscode-markdownlint",
